@@ -1,3 +1,13 @@
-from django.shortcuts import render
+from rest_framework.generics import (
+    ListCreateAPIView,
+)
 
-# Create your views here.
+from .models import URLMapping
+from .serializers import URLMappingSerializer
+
+
+class URLListCreateView(
+    ListCreateAPIView
+):
+    queryset = URLMapping.objects.all()
+    serializer_class = URLMappingSerializer
