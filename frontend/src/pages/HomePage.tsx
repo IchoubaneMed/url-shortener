@@ -1,7 +1,8 @@
 import { useState } from "react"
 
-import UrlForm from "../components/UrlForm"
 import ShortUrlResult from "../components/ShortUrlResult"
+import UrlForm from "../components/UrlForm"
+import UrlList from "../components/UrlList"
 
 import type { UrlMapping } from "../types/url"
 
@@ -28,6 +29,8 @@ export default function HomePage() {
           url={createdUrl}
         />
       )}
+
+      <UrlList />
     </main>
   )
 }
