@@ -49,7 +49,7 @@ export default function UrlForm({
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="url-form" onSubmit={handleSubmit}>
       <div>
         <label htmlFor="url">
           URL
@@ -70,6 +70,7 @@ export default function UrlForm({
       </div>
 
       <button
+        className="primary-button"
         type="submit"
         disabled={loading}
       >
@@ -79,7 +80,7 @@ export default function UrlForm({
       </button>
 
       {error && (
-        <p role="alert">
+        <p className="error" role="alert">
           {error}
         </p>
       )}

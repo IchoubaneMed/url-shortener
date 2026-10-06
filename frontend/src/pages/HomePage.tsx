@@ -12,25 +12,33 @@ export default function HomePage() {
     useState<UrlMapping | null>(null)
 
   return (
-    <main>
-      <h1>URL Shortener</h1>
+    <main className="app-container">
+      <header className="hero">
+        <h1>URL Shortener</h1>
 
-      <p>
-        Turn long URLs into short,
-        shareable links.
-      </p>
+        <p>
+          Create short links and track
+          their usage.
+        </p>
+      </header>
 
-      <UrlForm
-        onCreated={setCreatedUrl}
-      />
+      <section className="card">
+        <UrlForm
+          onCreated={setCreatedUrl}
+        />
+      </section>
 
       {createdUrl && (
-        <ShortUrlResult
-          url={createdUrl}
-        />
+        <section className="card">
+          <ShortUrlResult
+            url={createdUrl}
+          />
+        </section>
       )}
 
-      <UrlList />
+      <section className="card">
+        <UrlList />
+      </section>
     </main>
   )
 }

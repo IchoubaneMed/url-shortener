@@ -42,9 +42,9 @@ export default function UrlList() {
     <section>
       <h2>Recent Links</h2>
 
-      <ul>
+      <ul className="url-list">
         {urls.map((url) => (
-          <li key={url.short_code}>
+          <li className="url-list-item" key={url.short_code}>
             <div>
               <a
                 href={url.short_url}
@@ -55,7 +55,7 @@ export default function UrlList() {
               </a>
             </div>
 
-            <div>
+            <div className="original-url">
               {url.original_url}
             </div>
 
