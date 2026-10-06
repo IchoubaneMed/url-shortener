@@ -2,6 +2,7 @@ from rest_framework.generics import (
     ListCreateAPIView,
 )
 
+from analytics.tasks import track_url_click
 
 from django.http import Http404
 from django.shortcuts import redirect
@@ -46,5 +47,7 @@ def redirect_short_url(
             short_code,
             original_url,
         )
+
+    track_url_click.delay(short_code)
 
     return redirect(original_url)
