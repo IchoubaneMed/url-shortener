@@ -22,6 +22,6 @@ from urls.views import redirect_short_url
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/v1/", include("urls.urls")),
-    path("<str:short_code>", redirect_short_url, name="redirect-short-url",
-),
+    path("<str:short_code>", redirect_short_url, name="redirect-short-url"),
+    path("api/v1/", include("analytics.urls")),
 ]
